@@ -1,0 +1,35 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        gradlePluginPortal()
+        maven { url = 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url = 'https://jitpack.io' }
+    }
+    dependencies {
+        //classpath "com.android.tools.build:gradle:$gradleVersion"
+        // AGP Update Assistant needs this version numbers here, not in gradle.properties
+        classpath 'com.android.tools.build:gradle:9.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "com.mobidevelop.robovm:robovm-gradle-plugin:$roboVMVersion"
+    }
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion" apply false
+}
+
+allprojects {
+    version = '1.6'
+    ext.appName = 'Xodus'
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        gradlePluginPortal()
+        maven { url = 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url = 'https://oss.sonatype.org/content/repositories/releases/' }
+        maven { url = 'https://jitpack.io' }
+    }
+}
